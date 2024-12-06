@@ -16,9 +16,8 @@ import TabList from './tabs'
 import SettingsTab from './tabs/settings-tab'
 import MediaBucketTab from './tabs/media-bucket-tab'
 import ComponentsTab from './tabs/components-tab'
-// import SettingsTab from './tabs/settings-tab'
-// import MediaBucketTab from './tabs/media-bucket-tab'
-// import ComponentsTab from './tabs/components-tab'
+
+
 
 type Props = {
   subaccountId: string

@@ -33,9 +33,6 @@ import CustomModal from '@/components/global/custom-modal'
 import TicketForm from '@/components/forms/ticket-form'
 import PipelineTicket from './pipeline-ticket'
 
-
-//WIP wireup ticket
-
 interface PipelaneLaneProps {
   setAllTickets: Dispatch<SetStateAction<TicketWithTags>>
   allTickets: TicketWithTags
@@ -149,11 +146,7 @@ const PipelineLane: React.FC<PipelaneLaneProps> = ({
           >
             <AlertDialog>
               <DropdownMenu>
-                
-                {/* Changed overflow here also  */}
-
-
-                <div className="bg-slate-200/30 dark:bg-background/20  h-[700px] w-[300px] px-4 relative rounded-lg overflow-hidden flex-shrink-0 ">
+                <div className="bg-slate-200/30 dark:bg-background/20  h-[700px] w-[300px] px-4 relative rounded-lg overflow-visible flex-shrink-0 ">
                   <div
                     {...provided.dragHandleProps}
                     className=" h-14 backdrop-blur-lg dark:bg-background/40 bg-slate-200/60  absolute top-0 left-0 right-0 z-10 "
@@ -186,9 +179,7 @@ const PipelineLane: React.FC<PipelaneLaneProps> = ({
                     type="ticket"
                   >
                     {(provided) => (
-                      <div className=" max-h-[700px] overflow-hidden pt-12 ">  
-                        {/* Chnaged overflow to hidden from scroll to avoid scrollbar */}
-                        
+                      <div className=" max-h-[700px] overflow-scroll pt-12 ">
                         <div
                           {...provided.droppableProps}
                           ref={provided.innerRef}
@@ -203,7 +194,6 @@ const PipelineLane: React.FC<PipelaneLaneProps> = ({
                               key={ticket.id.toString()}
                               index={index}
                             />
-                          
                           ))}
                           {provided.placeholder}
                         </div>
